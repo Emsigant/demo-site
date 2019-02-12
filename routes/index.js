@@ -10,4 +10,8 @@ router.get('/about', function(req, res, next) {
   res.render('about');
 })
 
+router.get('/react-demo', function(req, res, next) {
+  res.render('react-demo')
+})
+
 module.exports = router;
