@@ -14,4 +14,9 @@ router.get('/react-demo', function(req, res, next) {
   res.render('react-demo')
 })
 
+router.get('/angular-demo', function(req, res, next) {
+  res.render('angular-demo')
+})
+
+
 module.exports = router;
