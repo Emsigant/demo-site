@@ -5,8 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var apiRouter = require('./routes/api')
+var apiRouter = require('./routes/api');
+var axios = require('axios')
 var app = express();
+
+// fetch
+axios.get('http://116.62.126.60/api/test').then(res => console.log(res))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
