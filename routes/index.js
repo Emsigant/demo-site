@@ -9,7 +9,9 @@ router.get('/', function(req, res, next) {
 router.get('/about', function(req, res, next) {
   res.render('about');
 })
-
+router.get('/test-api',function(req,res,next){
+  res.send({message: 'OK', status: 1});
+})
 router.get('/react-demo', function(req, res, next) {
   res.render('react-demo')
 })
