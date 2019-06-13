@@ -6,7 +6,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
-var axios = require('axios')
+var axios = require('axios');
+var bodyParser = require('body-parser');
 var app = express();
 
 // fetch
@@ -16,6 +17,8 @@ axios.get('http://116.62.126.60/api/test').then(res => console.log(res))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
