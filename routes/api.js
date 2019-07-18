@@ -10,13 +10,10 @@ router.get('/test', function (req, res, next) {
 });
 
 router.get('/body', function (req, res, next) {
-<<<<<<< HEAD
   res.send(req.query);
 });
 
 router.post('/post', function(req, res, next) {
-  res.send(req.body);
-=======
   res.send(req.body);
 });
 
@@ -55,7 +52,6 @@ router.post('/login', async function (req, res, next) {
       message: 'Bad request'
     });
   }
->>>>>>> c02140f677ef53debd893ee650ed8c8d439b3662
 })
 
 module.exports = router;
