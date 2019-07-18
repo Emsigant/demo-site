@@ -5,7 +5,12 @@ var schema1 = new mongoose.Schema({ username: String, password: String })
 var model1 = mongoose.model('model1', schema1, 'demo')
 router.get('/test', function (req, res, next) {
   model1.find().then(d => {
-    res.send(d)
+    res.send({
+      message: 'success',
+      data: {
+        length: d.length,
+      }
+    })
   })
 });
 
