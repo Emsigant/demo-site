@@ -10,11 +10,52 @@ router.get('/test', function (req, res, next) {
 });
 
 router.get('/body', function (req, res, next) {
+<<<<<<< HEAD
   res.send(req.query);
 });
 
 router.post('/post', function(req, res, next) {
   res.send(req.body);
+=======
+  res.send(req.body);
+});
+
+router.post('/login', async function (req, res, next) {
+  // login
+  const { username, password } = req.body;
+  if (username && password) {
+    model1
+      .find({ username })
+      .then(result => {
+        if (result.length) {
+          const match = result[0];
+          if (match.password === password) {
+            res.send({
+              message: 'Login success'
+            });
+          } else {
+            res.send({
+              message: 'Wrong password'
+            });
+          }
+        } else {
+          res.send({
+            message: 'Account not exist'
+          });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        res.send({
+          message: 'Fail to fetch data from database'
+        });
+      });
+  } else {
+    res.send({
+      message: 'Bad request'
+    });
+  }
+>>>>>>> c02140f677ef53debd893ee650ed8c8d439b3662
 })
 
 module.exports = router;
