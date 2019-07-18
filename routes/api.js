@@ -10,7 +10,11 @@ router.get('/test', function (req, res, next) {
 });
 
 router.get('/body', function (req, res, next) {
-  res.send(req.params);
+  res.send(req.query);
 });
+
+router.post('/post', function(req, res, next) {
+  res.send(req.body);
+})
 
 module.exports = router;
