@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "tsc; node ./bin/www DEV"
+    "dev": "node ./bin/www DEV"
   },
   "dependencies": {
+    "@types/mongoose": "^5.5.8",
     "@types/node": "^12.6.8",
     "axios": ">=0.18.1",
     "cookie-parser": "~1.4.3",

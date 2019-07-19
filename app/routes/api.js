@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -33,11 +34,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var express = require('express');
 var router = express.Router();
-var mongoose = require('../db');
-var schema1 = new mongoose.Schema({ username: String, password: String });
-var model1 = mongoose.model('model1', schema1, 'demo');
+var mongoose_1 = require("mongoose");
+var db_1 = require("../db");
+console.log(db_1.default);
+var schema1 = new mongoose_1.Schema({ username: String, password: String });
+var model1 = mongoose_1.model('model1', schema1, 'demo');
 router.get('/test', function (req, res, next) {
     model1.find().then(function (d) {
         res.send([

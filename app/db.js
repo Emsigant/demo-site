@@ -38,6 +38,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose_1 = require("mongoose");
 var IS_DEV = process.argv.indexOf('DEV') >= 0 ? 'mongodb://116.62.126.60:27017/demo' : 'mongodb://localhost:27017/demo';
 var DB_URL = "mongodb://" + (IS_DEV ? "116.62.126.60" : "localhost") + ":27017/demo";
+var mongoose = null;
 function initmongoose() {
     return __awaiter(this, void 0, void 0, function () {
         var err_1;
@@ -45,18 +46,18 @@ function initmongoose() {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
-                    return [4, mongoose_1.default.connect(DB_URL, { useNewUrlParser: true })];
+                    return [4, mongoose_1.connect(DB_URL, { useNewUrlParser: true })];
                 case 1:
-                    _a.sent();
+                    mongoose = _a.sent();
                     console.log("success to connect " + DB_URL);
                     return [3, 3];
                 case 2:
                     err_1 = _a.sent();
                     throw new Error("fail to connect " + DB_URL);
-                case 3: return [2, mongoose_1.default];
+                case 3: return [2, mongoose];
             }
         });
     });
 }
 initmongoose();
-exports.default = mongoose_1.default;
+exports.default = mongoose;
