@@ -80,4 +80,4 @@ typings/
 .dynamodb/
 
 # built app
-app
+app/
