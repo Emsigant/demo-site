@@ -1,5 +1,5 @@
 # demo-site
 A simple Express instance
-deploy order:
+## deploy order:
 - tsc -> npm run dev (develop mode)
 - tsc -> npm (run) start (online mode)
