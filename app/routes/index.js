@@ -1,4 +1,6 @@
-var express = require('express');
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express = require("express");
 var router = express.Router();
 router.get('/', function (req, res, next) {
     res.render('index', { title: 'Index' });
@@ -15,4 +17,4 @@ router.get('/react-demo', function (req, res, next) {
 router.get('/angular-demo', function (req, res, next) {
     res.render('angular-demo');
 });
-module.exports = router;
+exports.default = router;

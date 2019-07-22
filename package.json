@@ -7,6 +7,7 @@
     "dev": "node ./bin/www DEV"
   },
   "dependencies": {
+    "@types/express": "^4.17.0",
     "@types/mongoose": "^5.5.8",
     "@types/node": "^12.6.8",
     "axios": ">=0.18.1",
