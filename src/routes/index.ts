@@ -1,4 +1,4 @@
-var express = require('express');
+import * as express from 'express';
 var router = express.Router();
 
 /* GET home page. */
@@ -21,4 +21,4 @@ router.get('/angular-demo', function(req, res, next) {
 })
 
 
-module.exports = router;
+export default router;

@@ -35,11 +35,34 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var express = require('express');
-var router = express.Router();
+var express = require("express");
 var mongoose_1 = require("mongoose");
-var db_1 = require("../db");
-console.log(db_1.default);
+var mongoose_2 = require("mongoose");
+var IS_DEV = process.argv.indexOf('DEV') >= 0 ? 'mongodb://116.62.126.60:27017/demo' : 'mongodb://localhost:27017/demo';
+var DB_URL = "mongodb://" + (IS_DEV ? "116.62.126.60" : "localhost") + ":27017/demo";
+var mongoose = null;
+function initmongoose() {
+    return __awaiter(this, void 0, void 0, function () {
+        var err_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    return [4, mongoose_2.connect(DB_URL, { useNewUrlParser: true })];
+                case 1:
+                    mongoose = _a.sent();
+                    console.log("success to connect " + DB_URL);
+                    return [3, 3];
+                case 2:
+                    err_1 = _a.sent();
+                    throw new Error("fail to connect " + DB_URL);
+                case 3: return [2, mongoose];
+            }
+        });
+    });
+}
+initmongoose();
+var router = express.Router();
 var schema1 = new mongoose_1.Schema({ username: String, password: String });
 var model1 = mongoose_1.model('model1', schema1, 'demo');
 router.get('/test', function (req, res, next) {
@@ -101,4 +124,4 @@ router.post('/login', function (req, res, next) {
         });
     });
 });
-module.exports = router;
+exports.default = router;
