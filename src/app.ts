@@ -12,6 +12,7 @@ var app = express();
 // fetch
 // axios.get('http://116.62.126.60/api/test').then(res => console.log(res))
 // just a comment for test ssh
+// use 2 keys
 
 // view engine setup
 app.set('views', path.join(__dirname,'..', 'views'));
